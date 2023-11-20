@@ -1,0 +1,10 @@
+balancing simulation
+
+1. bioles_spawn.launch 로 gazebo에 로봇 모델 spawn하기
+2. bioles_balancing.launch 로 제어 노드 연결.
+
+add --> plugin 적용해주기 (plugin 파일의 libjumprobot_joint_control.so를 export 해주기)
+        ex) gedit ~/.bashrc에 export GAZEBO_PLUGIN_PATH=$HOME/ros2/ad_ws/src/plugin/:$GAZEBO_PLUGIN_PATH 추가하기
+        
+add --> gazebo 환경에서, 스프링 구현 위해 left_joint_8_1, left_joint_8_2에 각 각 1.5N 적용
+                                        right_joint_8_1, right_joint_8_2에 각 각 -1.5N 적용
