@@ -1,0 +1,1503 @@
+<?xml version='1.0'?>
+<sdf version='1.7'>
+  <model name='bioles'>
+    <link name='base_link'>
+      <inertial>
+        <pose>0 -0.0036 0.0048 0 0 1.5707963</pose>
+        <mass>0.2663</mass>
+        <inertia>
+          <ixx>166274.74e-09</ixx>
+          <ixy>25.87e-09</ixy>
+          <ixz>330.62e-09</ixz>
+          <iyy>144407.07e-09</iyy>
+          <iyz>7726.65e-09</iyz>
+          <izz>182963.13e-09</izz>
+        </inertia>
+      </inertial>
+      <collision name='base_link_collision'>
+        <pose>0 0 0 1.5707963 0 3.1415927</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>/home/seho/ros2/jumprobot_ws/src/bioles_urdf/meshes/base_link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='base_link_visual'>
+        <pose>0 0 0 1.5707963 0 3.1415927</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>/home/seho/ros2/jumprobot_ws/src/bioles_urdf/meshes/base_link.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <self_collide>1</self_collide>
+
+      <sensor name='imu_sensor' type='imu'>
+        <plugin name='imu_plugin' filename='libgazebo_ros_imu_sensor.so'>
+          <ros>
+            <namespace>/sensor</namespace>
+            <remapping>~/out:=imu</remapping>
+          </ros>
+          <initial_orientation_as_reference>0</initial_orientation_as_reference>
+        </plugin>
+        <always_on>1</always_on>
+        <update_rate>100</update_rate>
+        <visualize>1</visualize>
+        <imu>
+          <angular_velocity>
+            <x>
+              <noise type='gaussian'>
+                <mean>0</mean>
+                <stddev>0.0002</stddev>
+                <bias_mean>7.5e-06</bias_mean>
+                <bias_stddev>8e-07</bias_stddev>
+              </noise>
+            </x>
+            <y>
+              <noise type='gaussian'>
+                <mean>0</mean>
+                <stddev>0.0002</stddev>
+                <bias_mean>7.5e-06</bias_mean>
+                <bias_stddev>8e-07</bias_stddev>
+              </noise>
+            </y>
+            <z>
+              <noise type='gaussian'>
+                <mean>0</mean>
+                <stddev>0.0002</stddev>
+                <bias_mean>7.5e-06</bias_mean>
+                <bias_stddev>8e-07</bias_stddev>
+              </noise>
+            </z>
+          </angular_velocity>
+          <linear_acceleration>
+            <x>
+              <noise type='gaussian'>
+                <mean>0</mean>
+                <stddev>0.017</stddev>
+                <bias_mean>0.1</bias_mean>
+                <bias_stddev>0.001</bias_stddev>
+              </noise>
+            </x>
+            <y>
+              <noise type='gaussian'>
+                <mean>0</mean>
+                <stddev>0.017</stddev>
+                <bias_mean>0.1</bias_mean>
+                <bias_stddev>0.001</bias_stddev>
+              </noise>
+            </y>
+            <z>
+              <noise type='gaussian'>
+                <mean>0</mean>
+                <stddev>0.017</stddev>
+                <bias_mean>0.1</bias_mean>
+                <bias_stddev>0.001</bias_stddev>
+              </noise>
+            </z>
+          </linear_acceleration>
+        </imu>
+        <pose>0 -0.00375 0.04978 0 0 0</pose>
+      </sensor>
+    </link>
+
+    <link name='l_link1'>
+      <inertial>
+        <pose>-0.01405 0.02765 -0.00998 1.5707963 0 3.1415927</pose>
+        <mass>0.00553</mass>
+        <inertia>
+          <ixx>289.08e-09</ixx>
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>289.11e-09</iyy>
+          <iyz>-0.02e-09</iyz>
+          <izz>442.05e-09</izz>
+        </inertia>
+      </inertial>
+      <collision name='l_link1_collision'>
+        <pose>-0.01405 0.02765 -0.00998 1.5707963 0 3.1415927</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>/home/seho/ros2/jumprobot_ws/src/bioles_urdf/meshes/l_link1.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='l_link1_visual'>
+        <pose>-0.01405 0.02765 -0.00998 1.5707963 0 3.1415927</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>/home/seho/ros2/jumprobot_ws/src/bioles_urdf/meshes/l_link1.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <self_collide>1</self_collide>
+    </link>
+
+    <link name='l_link2'>
+      <pose>-0.04915 -0.0001 0 1.5707963 0 3.1415927</pose>
+      <inertial>
+        <pose>0.06391 -0.00559 -0.05587 0 0 0</pose>
+        <mass>0.38991</mass>
+        <inertia>
+          <ixx>603395.54e-09</ixx>
+          <ixy>47110.94e-09</ixy>
+          <ixz>253973.12e-09</ixz>
+          <iyy>867494.55e-09</iyy>
+          <iyz>-31412.53e-09</iyz>
+          <izz>510565.33e-09</izz>
+        </inertia>
+      </inertial>
+      <collision name='l_link2_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>/home/seho/ros2/jumprobot_ws/src/bioles_urdf/meshes/l_link2.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='l_link2_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>/home/seho/ros2/jumprobot_ws/src/bioles_urdf/meshes/l_link2.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <self_collide>1</self_collide>
+    </link>
+
+    <link name='l_link3'>
+      <pose>-0.08415 -0.0701 -0.01 1.5707963 0 1.5707963</pose>
+      <inertial>
+        <pose>0 0 -0.00097 0 0 0</pose>
+        <mass>0.00667</mass>
+        <inertia>
+          <ixx>506.66e-09</ixx>
+          <ixy>0.0e-09</ixy>
+          <ixz>0.0e-09</ixz>
+          <iyy>506.66e-09</iyy>
+          <iyz>0.0e-09</iyz>
+          <izz>789.23e-09</izz>
+        </inertia>
+      </inertial>
+      <collision name='l_link3_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>/home/seho/ros2/jumprobot_ws/src/bioles_urdf/meshes/l_link3.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='l_link3_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>/home/seho/ros2/jumprobot_ws/src/bioles_urdf/meshes/l_link3.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <self_collide>1</self_collide>
+    </link>
+
+    <link name='l_link4'>
+      <pose>-0.08365 -0.0339 -0.01 1.5707963 -0.1546362 1.5707963</pose>
+      <inertial>
+        <pose>0 0 -0.00055 0 0 0</pose>
+        <mass>0.00736</mass>
+        <inertia>
+          <ixx>591.86e-09</ixx>
+          <ixy>0.0e-09</ixy>
+          <ixz>0.0e-09</ixz>
+          <iyy>591.86e-09</iyy>
+          <iyz>0.0e-09</iyz>
+          <izz>834.86e-09</izz>
+        </inertia>
+      </inertial>
+      <collision name='l_link4_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>/home/seho/ros2/jumprobot_ws/src/bioles_urdf/meshes/l_link4.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='l_link4_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>/home/seho/ros2/jumprobot_ws/src/bioles_urdf/meshes/l_link4.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <self_collide>1</self_collide>
+    </link>
+
+    <link name='l_link5'>
+      <pose>-0.0677 -0.0701 -0.01 1.5707963 -0.0518363 1.5707963</pose>
+      <inertial>
+        <pose>0.00261 -0.00054 -0.00175 0 0 0</pose>
+        <mass>0.01866</mass>
+        <inertia>
+          <ixx>4163.33e-09</ixx>
+          <ixy>440.69e-09</ixy>
+          <ixz>-505.85e-09</ixz>
+          <iyy>4145.13e-09</iyy>
+          <iyz>123.51e-09</iyz>
+          <izz>6435.67e-09</izz>
+        </inertia>
+      </inertial>
+      <collision name='l_link5_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>/home/seho/ros2/jumprobot_ws/src/bioles_urdf/meshes/l_link5.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='l_link5_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>/home/seho/ros2/jumprobot_ws/src/bioles_urdf/meshes/l_link5.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <self_collide>1</self_collide>
+    </link>
+
+    <link name='l_link6'>
+      <pose>-0.09918 0.03702 0.00512 1.5707963 0.7688175 1.5707963</pose>
+      <inertial>
+        <pose>0.06313 0.00025 -0.00016 0 0 0</pose>
+        <mass>0.07339</mass>
+        <inertia>
+          <ixx>21356.74e-09</ixx>
+          <ixy>-782.05e-09</ixy>
+          <ixz>-2703.08e-09</ixz>
+          <iyy>235762.63e-09</iyy>
+          <iyz>-248.13e-09</iyz>
+          <izz>218926.11e-09</izz>
+        </inertia>
+      </inertial>
+      <collision name='l_link6_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>/home/seho/ros2/jumprobot_ws/src/bioles_urdf/meshes/l_link6.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='l_link6_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>/home/seho/ros2/jumprobot_ws/src/bioles_urdf/meshes/l_link6.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <self_collide>1</self_collide>
+    </link>
+
+    <link name='l_link7'>
+      <pose>-0.07363 -0.0001 -0.032 1.5707963 0.6174975 1.5707963</pose>
+      <inertial>
+        <pose>0.04897 -0.00251 0.00245 0 0 0</pose>
+        <mass>0.08659</mass>
+        <inertia>
+          <ixx>29187.43e-09</ixx>
+          <ixy>-21642.86e-09</ixy>
+          <ixz>17926.0e-09</ixz>
+          <iyy>339739.46e-09</iyy>
+          <iyz>3196.03e-09</iyz>
+          <izz>325422.64e-09</izz>
+        </inertia>
+      </inertial>
+      <collision name='l_link7_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>/home/seho/ros2/jumprobot_ws/src/bioles_urdf/meshes/l_link7.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='l_link7_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>/home/seho/ros2/jumprobot_ws/src/bioles_urdf/meshes/l_link7.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <self_collide>1</self_collide>
+    </link>
+
+    <link name='l_link8'>
+      <pose>-0.0864 0.14483 -0.09917 1.5707963 -0.7157595 1.5707963</pose>
+      <inertial>
+        <pose>-0.13863 0 0.00551 0 0 0</pose>
+        <mass>0.32033</mass>
+        <inertia>
+          <ixx>178980.82e-09</ixx>
+          <ixy>-0.02e-09</ixy>
+          <ixz>59631.39e-09</ixz>
+          <iyy>1207003.05e-09</iyy>
+          <iyz>0.0e-09</iyz>
+          <izz>1089097.5e-09</izz>
+        </inertia>
+      </inertial>
+      <collision name='l_link8_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>/home/seho/ros2/jumprobot_ws/src/bioles_urdf/meshes/l_link8.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='l_link8_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>/home/seho/ros2/jumprobot_ws/src/bioles_urdf/meshes/l_link8.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <self_collide>1</self_collide>
+    </link>
+
+    <link name='l_link9'>
+      <pose>-0.1326 0.00901 -0.21729 0 -1.5707963 0</pose>
+      <inertial>
+        <pose>0 0 0.00095 0 0 0</pose>
+        <mass>0.135</mass>
+        <inertia>
+          <ixx>125385.65e-09</ixx>
+          <ixy>0.0e-09</ixy>
+          <ixz>0.0e-09</ixz>
+          <iyy>125385.65e-09</iyy>
+          <iyz>0.0e-09</iyz>
+          <izz>239183.53e-09</izz>
+        </inertia>
+      </inertial>
+      <collision name='l_link9_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>/home/seho/ros2/jumprobot_ws/src/bioles_urdf/meshes/l_link9.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='l_link9_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>/home/seho/ros2/jumprobot_ws/src/bioles_urdf/meshes/l_link9.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <self_collide>1</self_collide>
+    </link>
+
+    <link name='l_link10'>
+      <pose>-0.09105 0.00005 0.03257 1.5707963 0 -1.5707963</pose>
+      <inertial>
+        <pose>-0.0095 -0.00006 0.00217 0 0 0</pose>
+        <mass>0.07845</mass>
+        <inertia>
+          <ixx>14896.2e-09</ixx>
+          <ixy>1.76e-09</ixy>
+          <ixz>-1039.76e-09</ixz>
+          <iyy>28578.13e-09</iyy>
+          <iyz>35.91e-09</iyz>
+          <izz>20361.03e-09</izz>
+        </inertia>
+      </inertial>
+      <collision name='l_link10_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>/home/seho/ros2/jumprobot_ws/src/bioles_urdf/meshes/l_link10.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='l_link10_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>/home/seho/ros2/jumprobot_ws/src/bioles_urdf/meshes/l_link10.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <self_collide>1</self_collide>
+    </link>
+
+    <link name='l_link11'>
+      <pose>-0.14035 0.00005 0.03257 1.5707963 0 1.5707963</pose>
+      <inertial>
+        <pose>0.00639 0.00014 -0.00183 0 0 0</pose>
+        <mass>0.13882</mass>
+        <inertia>
+          <ixx>50295.89e-09</ixx>
+          <ixy>18.39e-09</ixy>
+          <ixz>2180.07e-09</ixz>
+          <iyy>62544.79e-09</iyy>
+          <iyz>50.84e-09</iyz>
+          <izz>33105.79e-09</izz>
+        </inertia>
+      </inertial>
+      <collision name='l_link11_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>/home/seho/ros2/jumprobot_ws/src/bioles_urdf/meshes/l_link11.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='l_link11_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>/home/seho/ros2/jumprobot_ws/src/bioles_urdf/meshes/l_link11.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <self_collide>1</self_collide>
+    </link>
+
+    <link name='l_link12'>
+      <pose>-0.15495 0.0018 0.03282 1.5707963 0 -3.1415927</pose>
+      <inertial>
+        <pose>0.0 -0.02686 -0.00525 0 0 0</pose>
+        <mass>0.03669</mass>
+        <inertia>
+          <ixx>32527.46e-09</ixx>
+          <ixy>0.0e-09</ixy>
+          <ixz>0.0e-09</ixz>
+          <iyy>21093.47e-09</iyy>
+          <iyz>-482.09e-09</iyz>
+          <izz>14923.16e-09</izz>
+        </inertia>
+      </inertial>
+      <collision name='l_link12_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>/home/seho/ros2/jumprobot_ws/src/bioles_urdf/meshes/l_link12.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='l_link12_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>/home/seho/ros2/jumprobot_ws/src/bioles_urdf/meshes/l_link12.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <self_collide>1</self_collide>
+    </link>
+
+    <link name='l_link13'>
+      <pose>-0.15495 0.00005 -0.02718 1.5707963 0 -3.1415927</pose>
+      <inertial>
+        <pose>0.00436 -0.02739 0.00516 0 0 0</pose>
+        <mass>0.17387</mass>
+        <inertia>
+          <ixx>286171.24e-09</ixx>
+          <ixy>33569.11e-09</ixy>
+          <ixz>4079.05e-09</ixz>
+          <iyy>98554.48e-09</iyy>
+          <iyz>-15635.34e-09</iyz>
+          <izz>221450.4e-09</izz>
+        </inertia>
+      </inertial>
+      <collision name='l_link13_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>/home/seho/ros2/jumprobot_ws/src/bioles_urdf/meshes/l_link13.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='l_link13_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>/home/seho/ros2/jumprobot_ws/src/bioles_urdf/meshes/l_link13.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <self_collide>1</self_collide>
+    </link>
+
+    <link name='r_link1'>
+      <pose>0.01405 0.02765 -0.00998 1.5707963 0 -3.1415927</pose>
+      <inertial>
+        <pose>0.0 0.0 0.00053 0 0 0</pose>
+        <mass>0.00656</mass>
+        <inertia>
+          <ixx>318.01e-09</ixx>
+          <ixy>0.0e-09</ixy>
+          <ixz>0.0e-09</ixz>
+          <iyy>318.04e-09</iyy>
+          <iyz>0.01e-09</iyz>
+          <izz>493.59e-09</izz>
+        </inertia>
+      </inertial>
+      <collision name='r_link1_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>/home/seho/ros2/jumprobot_ws/src/bioles_urdf/meshes/r_link1.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='r_link1_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>/home/seho/ros2/jumprobot_ws/src/bioles_urdf/meshes/r_link1.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <self_collide>1</self_collide>
+    </link>
+
+    <link name='r_link2'>
+      <pose>0.04855 -0.0001 0 1.5707963 0 3.1415927</pose>
+      <inertial>
+        <pose>-0.06195 -0.00535 -0.05296 0 0 0</pose>
+        <mass>0.40952</mass>
+        <inertia>
+          <ixx>683362.19e-09</ixx>
+          <ixy>-49238.8e-09</ixy>
+          <ixz>-306330.46e-09</ixz>
+          <iyy>984505.39e-09</iyy>
+          <iyz>-37002.67e-09</iyz>
+          <izz>551619.11e-09</izz>
+        </inertia>
+      </inertial>
+      <collision name='r_link2_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>/home/seho/ros2/jumprobot_ws/src/bioles_urdf/meshes/r_link2.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='r_link2_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>/home/seho/ros2/jumprobot_ws/src/bioles_urdf/meshes/r_link2.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <self_collide>1</self_collide>
+    </link>
+
+    <link name='r_link3'>
+      <pose>0.08355 -0.0701 -0.01 1.5707963 0 -1.5707963</pose>
+      <inertial>
+        <pose>0 0 -0.00097 0 0 0</pose>
+        <mass>0.00667</mass>
+        <inertia>
+          <ixx>506.66e-09</ixx>
+          <ixy>0.0e-09</ixy>
+          <ixz>0.0e-09</ixz>
+          <iyy>506.66e-09</iyy>
+          <iyz>0.0e-09</iyz>
+          <izz>789.23e-09</izz>
+        </inertia>
+      </inertial>
+      <collision name='r_link3_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>/home/seho/ros2/jumprobot_ws/src/bioles_urdf/meshes/r_link3.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='r_link3_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>/home/seho/ros2/jumprobot_ws/src/bioles_urdf/meshes/r_link3.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <self_collide>1</self_collide>
+    </link>
+
+    <link name='r_link4'>
+      <pose>0.08305 -0.0339 -0.01 1.5707963 -0.1446878 -1.5707963</pose>
+      <inertial>
+        <pose>0 0 -0.00055 0 0 0</pose>
+        <mass>0.00736</mass>
+        <inertia>
+          <ixx>591.86e-09</ixx>
+          <ixy>0.0e-09</ixy>
+          <ixz>0.0e-09</ixz>
+          <iyy>591.86e-09</iyy>
+          <iyz>0.0e-09</iyz>
+          <izz>834.86e-09</izz>
+        </inertia>
+      </inertial>
+      <collision name='r_link4_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>/home/seho/ros2/jumprobot_ws/src/bioles_urdf/meshes/r_link4.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='r_link4_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>/home/seho/ros2/jumprobot_ws/src/bioles_urdf/meshes/r_link4.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <self_collide>1</self_collide>
+    </link>
+
+    <link name='r_link5'>
+      <pose>0.0671 -0.0701 -0.01 1.5707963 0.1333432 -1.5707963</pose>
+      <inertial>
+        <pose>-0.00261 -0.0005 -0.00229 0 0 0</pose>
+        <mass>0.01866</mass>
+        <inertia>
+          <ixx>3955.51e-09</ixx>
+          <ixy>-440.75e-09</ixy>
+          <ixz>436.33e-09</ixz>
+          <iyy>3966.08e-09</iyy>
+          <iyz>95.85e-09</iyz>
+          <izz>6435.67e-09</izz>
+        </inertia>
+      </inertial>
+      <collision name='r_link5_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>/home/seho/ros2/jumprobot_ws/src/bioles_urdf/meshes/r_link5.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='r_link5_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>/home/seho/ros2/jumprobot_ws/src/bioles_urdf/meshes/r_link5.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <self_collide>1</self_collide>
+    </link>
+
+    <link name='r_link6'>
+      <pose>0.09858 0.03702 0.00512 1.5707963 -0.7634071 -1.5707963</pose>
+      <inertial>
+        <pose>-0.06313 0.00025 -0.00016 0 0 0</pose>
+        <mass>0.07339</mass>
+        <inertia>
+          <ixx>21356.74e-09</ixx>
+          <ixy>782.05e-09</ixy>
+          <ixz>2703.08e-09</ixz>
+          <iyy>235762.63e-09</iyy>
+          <iyz>-248.13e-09</iyz>
+          <izz>218926.11e-09</izz>
+        </inertia>
+      </inertial>
+      <collision name='r_link6_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>/home/seho/ros2/jumprobot_ws/src/bioles_urdf/meshes/r_link6.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='r_link6_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>/home/seho/ros2/jumprobot_ws/src/bioles_urdf/meshes/r_link6.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <self_collide>1</self_collide>
+    </link>
+
+    <link name='r_link7'>
+      <pose>0.07303 -0.0001 -0.032 1.5707963 -0.612087 -1.5707963</pose>
+      <inertial>
+        <pose>-0.04276 -0.00347 0.01079 0 0 0</pose>
+        <mass>0.13044</mass>
+        <inertia>
+          <ixx>55029.61e-09</ixx>
+          <ixy>39424.51e-09</ixy>
+          <ixz>-26015.23e-09</ixz>
+          <iyy>534565.93e-09</iyy>
+          <iyz>4593.81e-09</iyz>
+          <izz>505718.21e-09</izz>
+        </inertia>
+      </inertial>
+      <collision name='r_link7_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>/home/seho/ros2/jumprobot_ws/src/bioles_urdf/meshes/r_link7.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='r_link7_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>/home/seho/ros2/jumprobot_ws/src/bioles_urdf/meshes/r_link7.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <self_collide>1</self_collide>
+    </link>
+
+    <link name='r_link8'>
+      <pose>0.0858 0.14539 -0.09859 1.5707963 -0.8592256 -1.5707963</pose>
+      <inertial>
+        <pose>0 -0.13863 0.00551 0 0 0</pose>
+        <mass>0.32033</mass>
+        <inertia>
+          <ixx>1207003.05e-09</ixx>
+          <ixy>0.02e-09</ixy>
+          <ixz>0.0e-09</ixz>
+          <iyy>178980.82e-09</iyy>
+          <iyz>59631.39e-09</iyz>
+          <izz>1089097.5e-09</izz>
+        </inertia>
+      </inertial>
+      <collision name='r_link8_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>/home/seho/ros2/jumprobot_ws/src/bioles_urdf/meshes/r_link8.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='r_link8_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>/home/seho/ros2/jumprobot_ws/src/bioles_urdf/meshes/r_link8.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <self_collide>1</self_collide>
+    </link>
+
+    <link name='r_link9'>
+      <pose>0.1305 0.00907 -0.21615 -1.5707963 0 -1.5707963</pose>
+      <inertial>
+        <pose>0 0 0.00095 0 0 0</pose>
+        <mass>0.135</mass>
+        <inertia>
+          <ixx>125385.65e-09</ixx>
+          <ixy>0.0e-09</ixy>
+          <ixz>0.0e-09</ixz>
+          <iyy>125385.65e-09</iyy>
+          <iyz>0.0e-09</iyz>
+          <izz>239183.53e-09</izz>
+        </inertia>
+      </inertial>
+      <collision name='r_link9_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>/home/seho/ros2/jumprobot_ws/src/bioles_urdf/meshes/r_link9.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='r_link9_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>/home/seho/ros2/jumprobot_ws/src/bioles_urdf/meshes/r_link9.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <self_collide>1</self_collide>
+    </link>
+
+    <link name='r_link10'>
+      <pose>0.09045 0.00005 0.03257 -1.5707963 0 -1.5707963</pose>
+      <inertial>
+        <pose>-0.0095 0.00006 0.00217 0 0 0</pose>
+        <mass>0.07845</mass>
+        <inertia>
+          <ixx>14896.2e-09</ixx>
+          <ixy>-1.74e-09</ixy>
+          <ixz>-1039.76e-09</ixz>
+          <iyy>28578.13e-09</iyy>
+          <iyz>-35.9e-09</iyz>
+          <izz>20361.03e-09</izz>
+        </inertia>
+      </inertial>
+      <collision name='r_link10_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>/home/seho/ros2/jumprobot_ws/src/bioles_urdf/meshes/r_link10.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='r_link10_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>/home/seho/ros2/jumprobot_ws/src/bioles_urdf/meshes/r_link10.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <self_collide>1</self_collide>
+    </link>
+
+    <link name='r_link11'>
+      <pose>0.13975 0.00005 0.03257 1.5707963 0 -1.5707963</pose>
+      <inertial>
+        <pose>-0.00639 0.00014 -0.00183 0 0 0</pose>
+        <mass>0.13882</mass>
+        <inertia>
+          <ixx>50295.89e-09</ixx>
+          <ixy>-18.4e-09</ixy>
+          <ixz>-2180.07e-09</ixz>
+          <iyy>62544.79e-09</iyy>
+          <iyz>50.86e-09</iyz>
+          <izz>33105.79e-09</izz>
+        </inertia>
+      </inertial>
+      <collision name='r_link11_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>/home/seho/ros2/jumprobot_ws/src/bioles_urdf/meshes/r_link11.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='r_link11_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>/home/seho/ros2/jumprobot_ws/src/bioles_urdf/meshes/r_link11.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <self_collide>1</self_collide>
+    </link>
+
+    <link name='r_link12'>
+      <pose>0.15435 0.0018 0.03282 1.5707963 0 -3.1415927</pose>
+      <inertial>
+        <pose>0 -0.02686 -0.00525 0 0 0</pose>
+        <mass>0.03669</mass>
+        <inertia>
+          <ixx>32527.46e-09</ixx>
+          <ixy>0.0e-09</ixy>
+          <ixz>0.0e-09</ixz>
+          <iyy>21093.47e-09</iyy>
+          <iyz>-482.09e-09</iyz>
+          <izz>14923.16e-09</izz>
+        </inertia>
+      </inertial>
+      <collision name='r_link12_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>/home/seho/ros2/jumprobot_ws/src/bioles_urdf/meshes/r_link12.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='r_link12_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>/home/seho/ros2/jumprobot_ws/src/bioles_urdf/meshes/r_link12.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <self_collide>1</self_collide>
+    </link>
+
+    <link name='r_link13'>
+      <pose>0.15435 0.00005 -0.02718 1.5707963 0 -3.1415927</pose>
+      <inertial>
+        <pose>-0.00458 -0.02739 0.0052 0 0 0</pose>
+        <mass>0.17387</mass>
+        <inertia>
+          <ixx>286106.06e-09</ixx>
+          <ixy>-33814.14e-09</ixy>
+          <ixz>-3962.85e-09</ixz>
+          <iyy>98612.17e-09</iyy>
+          <iyz>-15397.26e-09</iyz>
+          <izz>221573.34e-09</izz>
+        </inertia>
+      </inertial>
+      <collision name='r_link13_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>/home/seho/ros2/jumprobot_ws/src/bioles_urdf/meshes/r_link13.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='r_link13_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>/home/seho/ros2/jumprobot_ws/src/bioles_urdf/meshes/r_link13.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <self_collide>1</self_collide>
+    </link>
+
+    <joint name='l_joint1' type='revolute'>
+      <pose>-0.01405 0.02765 -0.00998 1.5707963 0 3.1415927</pose>
+      <parent>base_link</parent>
+      <child>l_link1</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1.5707963</lower>
+          <upper>1.5707963</upper>
+          <velocity>50</velocity>
+        </limit>
+      </axis>
+    </joint>
+
+    <joint name='l_joint2' type='fixed'>
+      <pose>0 0 0 0 0 0</pose>
+      <parent>base_link</parent>
+      <child>l_link2</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-0.523599</lower>
+          <upper>0.523599</upper>
+          <velocity>50</velocity>
+        </limit>
+      </axis>
+    </joint>
+
+    <joint name='l_joint3' type='revolute'>
+      <pose>0 0 0 0 0 0</pose>
+      <parent>l_link2</parent>
+      <child>l_link3</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <velocity>50</velocity>
+        </limit>
+      </axis>
+    </joint>
+
+    <joint name='l_joint4' type='revolute'>
+      <pose>0 0 0 0 0 0</pose>
+      <parent>l_link2</parent>
+      <child>l_link4</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <velocity>50</velocity>
+        </limit>
+      </axis>
+    </joint>
+
+    <joint name='l_joint5' type='revolute'>
+      <pose>0 0 0 0 0 0</pose>
+      <parent>l_link2</parent>
+      <child>l_link5</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <velocity>50</velocity>
+        </limit>
+      </axis>
+    </joint>
+
+    <joint name='l_joint6' type='revolute'>
+      <pose>0 0 0 0 0 0</pose>
+      <parent>l_link2</parent>
+      <child>l_link6</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <!-- <lower>-0.0872665</lower>
+          <upper>0.366519</upper> -->
+          <lower>-0.0872665</lower>
+          <upper>0.750492</upper>
+          <velocity>50</velocity>
+        </limit>
+      </axis>
+    </joint>
+
+    <joint name='l_joint7' type='revolute'>
+      <pose>0 0 0 0 0 0</pose>
+      <parent>l_link2</parent>
+      <child>l_link7</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <!-- <lower>-0.0872665</lower>
+          <upper>0.401426</upper> -->
+          <lower>-0.0872665</lower>
+          <upper>0.750492</upper>
+          <velocity>50</velocity>
+        </limit>
+      </axis>
+    </joint>
+
+    <joint name='l_joint8_1' type='revolute'>
+      <pose>0 0 0 0 0 0</pose>
+      <parent>l_link6</parent>
+      <child>l_link8</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <!-- <lower>-0.383972</lower>
+          <upper>0.0872665</upper> -->
+          <lower>-0.750492</lower>
+          <upper>0.0872665</upper>
+          <velocity>50</velocity>
+        </limit>
+      </axis>
+    </joint>
+
+    <joint name='l_joint8_2' type='revolute'>
+      <pose>-0.03 0 0 0 0 0</pose>
+      <parent>l_link7</parent>
+      <child>l_link8</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <!-- <lower>-0.383972</lower>
+          <upper>0.0872665</upper> -->
+          <lower>-0.750492</lower>
+          <upper>0.0872665</upper>
+          <velocity>50</velocity>
+        </limit>
+      </axis>
+    </joint>
+
+    <joint name='l_joint9' type='revolute'>
+      <pose>0 0 0 0 0 0</pose>
+      <parent>l_link8</parent>
+      <child>l_link9</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <!-- <velocity>50</velocity> -->
+        </limit>
+      </axis>
+    </joint>
+
+    <joint name='l_joint10' type='fixed'>
+      <pose>0 0 0 0 0 0</pose>
+      <parent>l_link2</parent>
+      <child>l_link10</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+      </axis>
+    </joint>
+
+    <joint name='l_joint11' type='revolute'>
+      <pose>0 0 0 0 0 0</pose>
+      <parent>l_link10</parent>
+      <child>l_link11</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-0.750492</lower>
+          <upper>0.750492</upper>
+          <velocity>50</velocity>
+        </limit>
+      </axis>
+    </joint>
+
+    <joint name='l_joint12' type='revolute'>
+      <pose>0 0 0 0 0 0</pose>
+      <parent>l_link11</parent>
+      <child>l_link12</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>3.1415927</upper>
+          <velocity>50</velocity>
+        </limit>
+      </axis>
+    </joint>
+
+    <joint name='l_joint13' type='revolute'>
+      <pose>0 0 0 0 0 0</pose>
+      <parent>l_link12</parent>
+      <child>l_link13</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1.5707963</lower>
+          <upper>1.5707963</upper>
+          <velocity>50</velocity>
+        </limit>
+      </axis>
+    </joint>
+
+    <joint name='r_joint1' type='revolute'>
+      <pose>0 0 0 0 0 0</pose>
+      <parent>base_link</parent>
+      <child>r_link1</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1.5707963</lower>
+          <upper>1.5707963</upper>
+          <velocity>50</velocity>
+        </limit>
+      </axis>
+    </joint>
+
+    <joint name='r_joint2' type='fixed'>
+      <pose>0 0 0 0 0 0</pose>
+      <parent>base_link</parent>
+      <child>r_link2</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-0.523599</lower>
+          <upper>0.523599</upper>
+          <velocity>50</velocity>
+        </limit>
+      </axis>
+    </joint>
+
+    <joint name='r_joint3' type='revolute'>
+      <pose>0 0 0 0 0 0</pose>
+      <parent>r_link2</parent>
+      <child>r_link3</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <velocity>50</velocity>
+        </limit>
+      </axis>
+    </joint>
+
+    <joint name='r_joint4' type='revolute'>
+      <pose>0 0 0 0 0 0</pose>
+      <parent>r_link2</parent>
+      <child>r_link4</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <velocity>50</velocity>
+        </limit>
+      </axis>
+    </joint>
+
+    <joint name='r_joint5' type='revolute'>
+      <pose>0 0 0 0 0 0</pose>
+      <parent>r_link2</parent>
+      <child>r_link5</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <velocity>50</velocity>
+        </limit>
+      </axis>
+    </joint>
+
+    <joint name='r_joint6' type='revolute'>
+      <pose>0 0 0 0 0 0</pose>
+      <parent>r_link2</parent>
+      <child>r_link6</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <!-- <lower>-0.366519</lower>
+          <upper>0.0872665</upper> -->
+          <lower>-0.750492</lower>
+          <upper>0.0872665</upper>
+          <velocity>50</velocity>
+        </limit>
+      </axis>
+    </joint>
+
+    <joint name='r_joint7' type='revolute'>
+      <pose>0 0 0 0 0 0</pose>
+      <parent>r_link2</parent>
+      <child>r_link7</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <!-- <lower>-0.401426</lower>
+          <upper>0.0872665</upper> -->
+          <lower>-0.750492</lower>
+          <upper>0.0872665</upper>
+          <velocity>50</velocity>
+        </limit>
+      </axis>
+    </joint>
+
+    <joint name='r_joint8_1' type='revolute'>
+      <pose>0 0 0 0 0 0</pose>
+      <parent>r_link6</parent>
+      <child>r_link8</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <!-- <lower>-0.0872665</lower>
+          <upper>0.383972</upper> -->
+          <lower>-0.0872665</lower>
+          <upper>0.750492</upper>
+          <velocity>50</velocity>
+        </limit>
+      </axis>
+    </joint>
+
+    <joint name='r_joint8_2' type='revolute'>
+      <pose>0 -0.03 0 0 0 0</pose>
+      <parent>r_link7</parent>
+      <child>r_link8</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <!-- <lower>-0.0872665</lower>
+          <upper>0.383972</upper> -->
+          <lower>-0.0872665</lower>
+          <upper>0.750492</upper>
+          <velocity>50</velocity>
+        </limit>
+      </axis>
+    </joint>
+
+    <joint name='r_joint9' type='revolute'>
+      <pose>0 0 0 0 0 0</pose>
+      <parent>r_link8</parent>
+      <child>r_link9</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <!-- <velocity>50</velocity> -->
+        </limit>
+      </axis>
+    </joint>
+
+    <joint name='r_joint10' type='fixed'>
+      <pose>0 0 0 0 0 0</pose>
+      <parent>r_link2</parent>
+      <child>r_link10</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+      </axis>
+    </joint>
+
+    <joint name='r_joint11' type='revolute'>
+      <pose>0 0 0 0 0 0</pose>
+      <parent>r_link10</parent>
+      <child>r_link11</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-0.750492</lower>
+          <upper>0.750492</upper>
+          <velocity>50</velocity>
+        </limit>
+      </axis>
+    </joint>
+
+    <joint name='r_joint12' type='revolute'>
+      <pose>0 0 0 0 0 0</pose>
+      <parent>r_link11</parent>
+      <child>r_link12</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-3.1415927</lower>
+          <upper>0</upper>
+          <velocity>50</velocity>
+        </limit>
+      </axis>
+    </joint>
+
+    <joint name='r_joint13' type='revolute'>
+      <pose>0 0 0 0 0 0</pose>
+      <parent>r_link12</parent>
+      <child>r_link13</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1.5707963</lower>
+          <upper>1.5707963</upper>
+          <velocity>50</velocity>
+        </limit>
+      </axis>
+    </joint>
+
+    <joint name='l_gear_joint1' type='gearbox'>
+      <parent>l_link1</parent>
+      <child>l_link2</child>
+      <gearbox_ratio>0.3333333</gearbox_ratio>
+      <gearbox_reference_body>base_link</gearbox_reference_body>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <use_parent_model_frame>true</use_parent_model_frame>
+      </axis>
+      <axis2>
+        <xyz>0 0 1</xyz>
+        <use_parent_model_frame>true</use_parent_model_frame>
+      </axis2>
+    </joint>
+
+    <joint name='l_gear_joint2' type='gearbox'>
+      <parent>l_link3</parent>
+      <child>l_link4</child>
+      <gearbox_ratio>1</gearbox_ratio>
+      <gearbox_reference_body>l_link2</gearbox_reference_body>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <use_parent_model_frame>true</use_parent_model_frame>
+      </axis>
+      <axis2>
+        <xyz>0 0 1</xyz>
+        <use_parent_model_frame>true</use_parent_model_frame>
+      </axis2>
+    </joint>
+  
+    <joint name='l_gear_joint3' type='gearbox'>
+      <parent>l_link4</parent>
+      <child>l_link5</child>
+      <gearbox_ratio>0.3333333</gearbox_ratio>
+      <gearbox_reference_body>l_link2</gearbox_reference_body>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <use_parent_model_frame>true</use_parent_model_frame>
+      </axis>
+      <axis2>
+        <xyz>0 0 1</xyz>
+        <use_parent_model_frame>true</use_parent_model_frame>
+      </axis2>
+    </joint>
+
+    <joint name='r_gear_joint1' type='gearbox'>
+      <parent>r_link1</parent>
+      <child>r_link2</child>
+      <gearbox_ratio>0.3333333</gearbox_ratio>
+      <gearbox_reference_body>base_link</gearbox_reference_body>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <use_parent_model_frame>true</use_parent_model_frame>
+      </axis>
+      <axis2>
+        <xyz>0 0 1</xyz>
+        <use_parent_model_frame>true</use_parent_model_frame>
+      </axis2>
+    </joint>
+
+    <joint name='r_gear_joint2' type='gearbox'>
+      <parent>r_link3</parent>
+      <child>r_link4</child>
+      <gearbox_ratio>1</gearbox_ratio>
+      <gearbox_reference_body>r_link2</gearbox_reference_body>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <use_parent_model_frame>true</use_parent_model_frame>
+      </axis>
+      <axis2>
+        <xyz>0 0 1</xyz>
+        <use_parent_model_frame>true</use_parent_model_frame>
+      </axis2>
+    </joint>
+  
+    <joint name='r_gear_joint3' type='gearbox'>
+      <parent>r_link4</parent>
+      <child>r_link5</child>
+      <gearbox_ratio>0.3333333</gearbox_ratio>
+      <gearbox_reference_body>r_link2</gearbox_reference_body>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <use_parent_model_frame>true</use_parent_model_frame>
+      </axis>
+      <axis2>
+        <xyz>0 0 1</xyz>
+        <use_parent_model_frame>true</use_parent_model_frame>
+      </axis2>
+    </joint>
+
+    <plugin name="joint_control" filename="libjumprobot_joint_control.so">
+      <l_wheel>l_joint9</l_wheel>
+      <r_wheel>r_joint9</r_wheel>
+      <l_cam>l_joint7</l_cam>
+      <r_cam>r_joint7</r_cam>
+      <l_waist>l_joint1</l_waist>
+      <r_waist>r_joint1</r_waist>
+      <l_arm1>l_joint11</l_arm1>
+      <l_arm2>l_joint12</l_arm2>
+      <l_arm3>l_joint13</l_arm3>
+      <r_arm1>r_joint11</r_arm1>
+      <r_arm2>r_joint12</r_arm2>
+      <r_arm3>r_joint13</r_arm3>
+    </plugin>
+
+  </model>
+</sdf>
