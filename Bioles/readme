@@ -1,0 +1,7 @@
+bioles 로봇 시스템 연결
+
+1. arduino left, arduino right 파일 각 포트에 연결후 micro board에 업로드.
+2. balancing.launch 파일 실행 (주의!! serial port 번호 꼭 초기화 및 설정 확인 후 실행하기)
+3. jumping 혹은 balancing 파일 실행으로 제어 노드 활성화.
+
+주의 --> 실행 하기 전, 전압 체크, 회로도 체크
